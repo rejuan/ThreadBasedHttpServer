@@ -13,13 +13,13 @@ public class Config {
     public static Config getInstance() {
         if(instance == null) {
             instance = new Config();
-            instance.parseConfig();
+            instance.loadConfig();
         }
 
         return instance;
     }
 
-    private ConfigDTO parseConfig() {
+    private ConfigDTO loadConfig() {
         try {
             Yaml yaml = new Yaml(new Constructor(ConfigDTO.class));
             File file = new File("config.yaml");
@@ -30,7 +30,7 @@ public class Config {
         return configDTO;
     }
 
-    public boolean isConfigAlright() {
+    public boolean isConfigValid() {
         
         if(configDTO != null) {
             if(configDTO.getPort() <= 0) {
