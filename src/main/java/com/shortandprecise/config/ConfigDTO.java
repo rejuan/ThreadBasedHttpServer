@@ -4,6 +4,11 @@ public class ConfigDTO {
 
     private int port;
     private String host;
+    private int requestProcessor;
+
+    public ConfigDTO() {
+        requestProcessor = 2;
+    }
 
     public int getPort() {
         return port;
@@ -19,5 +24,13 @@ public class ConfigDTO {
 
     public void setHost(String host) {
         this.host = host;
+    }
+
+    public int getRequestProcessor() {
+        return requestProcessor;
+    }
+
+    public void setRequestProcessor(int requestProcessor) {
+        this.requestProcessor = requestProcessor;
     }
 }

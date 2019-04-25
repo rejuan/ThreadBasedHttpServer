@@ -2,3 +2,5 @@
 port: 8080
 
 host: "html"
+
+requestProcessor: 4
